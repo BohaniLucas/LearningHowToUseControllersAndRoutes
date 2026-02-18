@@ -1,19 +1,14 @@
 // /send/details
-import { saveUserDetails } from "../controllers/userDetails.js";
+import { saveUserDetails,homePage,successPage } from "../controllers/userDetails.js";
 import express from "express";
-import {fileURLToPath} from "url";
-import path from "path";
 
 const router = express.Router();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.join(__filename);
+router.post("/send/details",saveUserDetails);
 
-router.post("/details" , saveUserDetails);
+router.get("/",homePage);
 
-router.get("/home", (req,res)=>{
-    
-});
+router.get("/success-message",successPage)
 
 export default router;
 

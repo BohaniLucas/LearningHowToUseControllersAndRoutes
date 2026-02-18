@@ -4,9 +4,9 @@ import express from "express";
 
 const router = express.Router();
 
-router.post("/send/details",saveUserDetails);
-
 router.get("/",homePage);
+
+router.post("/send/details",saveUserDetails);
 
 router.get("/success-message",successPage)
 

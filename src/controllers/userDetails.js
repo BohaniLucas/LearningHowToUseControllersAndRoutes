@@ -30,7 +30,9 @@ export const successPage = async (req,res)=>{
              VALUES (@name,@surname,@email)`
         );
 
-        res.redirect(`/success-message?name=${encodeURIComponent(name)} ${encodeURIComponent(surname)}`);
+        res.redirect(
+             `/success-message?name=${encodeURIComponent(name)}&surname=${encodeURIComponent(surname)}`
+        );
 
     }catch(err){
         console.log("Error: " + err);
